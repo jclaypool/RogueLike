@@ -18,7 +18,11 @@ public class MapBuilder {
     public void buildMap(){
         mapArray = new ArrayList<ArrayList<Tile>>(mapWidth);
         for (int x = 0;x< mapWidth;x++){
-            mapArray.add(new ArrayList<Tile>(mapWidth));
+            ArrayList<Tile> heightArray = new ArrayList<Tile>(mapHeight);
+            for (int y = 0; y<mapHeight;y++){
+                heightArray.add(new Tile(x,y));
+            }
+            mapArray.add(heightArray);
         }
 
         // test the list
